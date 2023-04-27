@@ -1,0 +1,10 @@
+DEFAULT install
+UI menu.c32
+
+LABEL install
+  SAY "Reached the default install"
+##  KERNEL /ubuntu22_server/vmlinuz
+##  INITRD /ubuntu22_server/initrd
+
+##Need to add pre-seed or cloud-init to complete autominstall
+##  APPEND root=/dev/ram0 ramdisk_size=1500000 ip=dhcp url=http://172.23.4.54/ISO/ubuntu-22.04.2-live-server-amd64.iso

@@ -1,0 +1,7 @@
+DEFAULT install
+LABEL install
+  KERNEL /ubuntu22_server/vmlinuz
+  INITRD /ubuntu22_server/initrd
+
+    ##Need to add pre-seed or cloud-init to complete autominstall
+  APPEND root=/dev/ram0 ramdisk_size=1500000 ip=dhcp url=https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso

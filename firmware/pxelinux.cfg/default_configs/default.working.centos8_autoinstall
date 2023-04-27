@@ -1,0 +1,7 @@
+DEFAULT install
+LABEL install
+  MENU LABEL CentOS 8 x86_64
+  KERNEL /CentOS_8/vmlinuz
+  APPEND initrd=/CentOS_8/initrd.img boot=live inst.nomemcheck ip=dhcp inst.stage2=http://172.23.4.54/ISO/CentOS_8/ inst.repo=http://172.23.4.54/ISO/CentOS_8/ inst.ks=http://172.23.4.54/ISO/CentOS_8/anaconda-ks.cfg
+
+#  APPEND initrd=/CentOS_8/initrd.img boot=live inst.nomemcheck ip=dhcp inst.stage2=http://172.23.4.54/ISO/CentOS_8/ inst.repo=https://mirror.stream.centos.org/8-stream/BaseOS/x86_64/os/ inst.ks=http://172.23.4.54/ISO/CentOS_8/anaconda-ks.cfg

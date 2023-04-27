@@ -1,0 +1,7 @@
+DEFAULT install
+UI bootloader/menu.c32
+LABEL install
+  SAY "Reached MAC install"
+##  KERNEL vmlinuz
+##  INITRD initrd
+##  APPEND root=/dev/ram0 ramdisk_size=1500000 ip=dhcp url=http://172.23.4.52/ISO/ubuntu-22.04.2-live-server-amd64.iso
