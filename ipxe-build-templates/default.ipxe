@@ -7,7 +7,7 @@ echo *******************************  ERROR  **********************************
 echo *************************************************************************
 echo This is the default MaaS build script.
 echo
-echo You got here because the system MACADDR: ${mac} has not been  
+echo You got here because the system MACADDR: ${mac:hexraw} has not been  
 echo authorized for an auto-build.  Please contact your Ops Team.
 echo
 echo Sending this machine to the main menu.
