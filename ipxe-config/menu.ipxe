@@ -15,7 +15,8 @@ cpuid --ext 29 && set archl amd64 || set archl i386
 
 :start
 menu CDW / Digital Velocity MaaS Build System
-item --gap --             ------------------- for server MACADDR: ${mac:hexraw} -------------------
+item --gap --             ---------------- for server MACADDR: ${mac:hexraw} ------------------------
+item --gap --             ----------------------- Platform Type: ${platform} -----------------------------
 item --gap --             ------------------------- Operating systems ------------------------------
 item --key u local       Boot from local disk
 item --key l menu-live    Live environments...
@@ -166,7 +167,9 @@ choose --timeout ${submenu-timeout} --default ${submenu-default} selected && got
 :memtest
 # Test to see if we are UEFI
 # If we are not, assume BIOS -- otherwise fail (for some reason we're not UEFI or BIOS)
-iseq ${platform} efi && chain ${os-image-dir}memtest64.efi || chain ${os-image-dir}memtest64.bin || goto failed
+#iseq ${platform} efi && chain ${os-image-dir}memtest64.efi || chain ${os-image-dir}memtest64.bin || goto failed
+iseq ${platform} efi && chain http://${http-server-ip}${http-os-image-dir}memtest64.efi || chain http://${http-server-ip}${http-os-image-dir}memtest64.bin || goto failed
+
 goto start
 
 
